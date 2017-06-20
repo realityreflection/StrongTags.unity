@@ -73,7 +73,7 @@ public class StrongTags : MonoBehaviour {
     }
     static string GenerateLayers(string[] layers)
     {
-        var script = "public enum Layers {\r\n";
+        var script = "[Flags]\r\npublic enum Layers {\r\n";
 
         var cnt = 0;
         foreach (var layer in layers)
