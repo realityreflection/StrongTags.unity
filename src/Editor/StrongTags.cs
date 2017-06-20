@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEditor;
 
-tpublic class StrongTags : MonoBehaviour {
+public class StrongTags : MonoBehaviour {
     public static string TagPath = "Tags.cs";
     public static string LayerPath = "Layers.cs";
 
@@ -14,7 +14,7 @@ tpublic class StrongTags : MonoBehaviour {
     private static string[] lastTags;
 
     [InitializeOnLoadMethod]
-s	static void Generate () {
+	static void Generate () {
 
         EditorApplication.update += Update;
 
@@ -24,7 +24,7 @@ s	static void Generate () {
     }
     
 	static void Update () {
-y        if (EditorApplication.timeSinceStartup < nextTick)
+        if (EditorApplication.timeSinceStartup < nextTick)
             return;
 
         var tags = UnityEditorInternal.InternalEditorUtility.tags;
@@ -34,7 +34,7 @@ y        if (EditorApplication.timeSinceStartup < nextTick)
             File.WriteAllText(Application.dataPath + "/" + TagPath, script);
             lastTags = tags;
         }
-S
+
         var layers = new string[32];
         for (int i = 0; i < 32; i++)
             layers[i] = LayerMask.LayerToName(i);
