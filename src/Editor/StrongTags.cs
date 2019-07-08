@@ -14,7 +14,7 @@ public class StrongTags : MonoBehaviour {
     private static string[] lastTags;
 
     [InitializeOnLoadMethod]
-	static void Generate () {
+    static void Generate () {
 
         EditorApplication.update += Update;
 
@@ -23,7 +23,7 @@ public class StrongTags : MonoBehaviour {
         lastTags = new string[] { };
     }
     
-	static void Update () {
+    static void Update () {
         if (EditorApplication.timeSinceStartup < nextTick)
             return;
 
